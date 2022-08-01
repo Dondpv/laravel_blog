@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
-use App\Models\contact;
+use App\Models\Contact;
+
 
 class ContactController extends Controller{
 
@@ -21,6 +22,6 @@ class ContactController extends Controller{
         $contact->message =$req->input('message');
 
         $contact->save();
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success','Сообщение было добавлено');
     }
 }
