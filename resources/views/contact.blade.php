@@ -24,7 +24,7 @@
         <textarea name="message"  id="message" class="form-control"></textarea>
 
     </div>
-    <button type="submit" class="btn btn-success">Отправить</button>
+    <button type="submit"  class="w-10 btn btn-lg btn-primary">Отправить</button>
 </form>
 @endsection
 

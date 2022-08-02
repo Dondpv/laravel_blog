@@ -1,14 +1,18 @@
 @extends('layouts.app')
-@section('title-blog')Все Сообщения@endsection
-@section('content')<h1>Все сщщбщения</h1>
-@foreach($data as $el)
+@section('title-blog'){{$data->subject}}@endsection
+@section('content')
+    <h1>{{$data->subject}}</h1>
+
     <div class=" alert alert-info">
-        <h3>{{ $el -> subject }}</h3>
-        <p>{{ $el -> email }}</p>
-        <p><small>{{ $el -> created_at }}</small></p>
-        <a href="{{route('conact-data-one', $el->id)}}"><button class="btn btn-warning">Детальнее</button></a>
+        <p>{{ $data->email }} - {{ $data->name }}</p>
+        <p>{{ $data->message }}</p>
+        <p>{{ $data->created_at}}</p>
+        <p><small>{{ $data -> created_at }}</small></p>
+        <a href="{{route('contact-update', $data->id)}}"><button  class="w-10 btn btn-lg btn-primary">Редактировать</button></a>
+        <a href="{{route('contact-delete', $data->id)}}"><button  class="w-10 btn btn-lg btn-primary">Удалить</button></a>
+
     </div>
-@endforeach
+
 @endsection
 
 
